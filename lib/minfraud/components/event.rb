@@ -1,3 +1,5 @@
+require 'minfraud/enum'
+
 module Minfraud
   module Components
     class Event < Base

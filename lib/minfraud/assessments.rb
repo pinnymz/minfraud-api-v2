@@ -1,3 +1,9 @@
+require 'minfraud/http_service'
+require 'minfraud/http_service/request'
+require 'minfraud/http_service/response'
+require 'minfraud/resolver'
+require 'minfraud/error_handler'
+
 module Minfraud
   class Assessments
     include ::Minfraud::HTTPService

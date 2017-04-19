@@ -1,3 +1,5 @@
+require 'minfraud/errors'
+
 module Minfraud
   module ErrorHandler
     class << self
@@ -10,13 +12,13 @@ module Minfraud
         raise *STATUS_CODES.fetch(response.code, [ServerError, 'Server error'])
       end
 
-      # A hash that maps status codes returned by minFraud with errors & messages
+      # Hash that maps status codes returned by minFraud with errors & messages
       STATUS_CODES = {
         IP_ADDRESS_INVALID:    [
           ClientError, 'You have no supplied a valid IPv4 or IPv6 address'
         ],
         IP_ADDRESS_REQUIRED:   [
-          ClientError,  'You have not supplied an IP address which is required filed'
+          ClientError, 'You have not supplied an IP address which is required filed'
         ],
         IP_ADDRESS_RESERVED:   [
           ClientError, 'You have supplied an IP address which is reserved'
@@ -39,7 +41,7 @@ module Minfraud
         PERMISSION_REQUIRED:   [
           ClientError, 'You do not have permission to use this service'
         ]
-      }
+      }.freeze
     end
   end
 end
