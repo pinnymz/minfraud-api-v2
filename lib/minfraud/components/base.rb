@@ -4,8 +4,6 @@ require 'minfraud/accessible'
 module Minfraud
   module Components
     class Base
-      # @note This class is used as a parent class for all other components
-      # @note It defines a method which is used for basic JSON representation of PORO objects
       include Accessible
       extend  Forwardable
 
