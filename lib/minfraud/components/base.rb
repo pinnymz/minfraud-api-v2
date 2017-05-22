@@ -1,21 +1,17 @@
 require 'json'
-require 'minfraud/accessible'
+require 'minfraud/support/initializable'
 
 module Minfraud
   module Components
     class Base
-      include Accessible
       extend  Forwardable
+      include Support::Initializable
 
-      def_delegators :compact_instance_values, :to_json
-
-      def initialize(params = {})
-        self.class.declarations.each { |attr_name| instance_variable_set("@#{attr_name}", params[attr_name]) }
-      end
+      def_delegators :present_instance_values, :to_json
 
       private
 
-      def compact_instance_values
+      def present_instance_values
         instance_values.reject { |_, v| v.nil? }
       end
 
