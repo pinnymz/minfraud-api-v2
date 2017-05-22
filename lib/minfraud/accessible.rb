@@ -11,6 +11,7 @@ module Minfraud
 
       def accessor(attribute_name)
         declarations << attribute_name
+        self.send :attr_accessor, attribute_name
       end
     end
   end
