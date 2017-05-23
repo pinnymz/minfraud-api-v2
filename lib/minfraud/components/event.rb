@@ -6,20 +6,22 @@ module Minfraud
       include ::Minfraud::Enum
       # @attribute transaction_id
       # @return [String] Internal ID for the transaction. Used to locate a specific transaction in minFraud logs
-      accessor :transaction_id
+      attr_accessor :transaction_id
 
       # @attribute shop_id
       # @return [String] Internal ID for the shop, affiliate, or merchant this order is coming from
-      accessor :shop_id
+      attr_accessor :shop_id
 
       # @attribute time
       # @return [String] The date and time the event occurred. The string must be in the RFC 3339 date-time format.
       # If this field is not in the request, the current time will be used
-      accessor :time
+      attr_accessor :time
 
       # @attribute type
       # @return [String] The type of event being scored
-      enum_accessor :type, [:account_creation, :account_login, :purchase, :recurring_purchase, :referral, :survey]
+      enum_accessor :type, [
+        :account_creation, :account_login, :purchase, :recurring_purchase, :referral, :survey
+      ]
 
       # Creates Minfraud::Components::Event instance
       # @param  [Hash] params hash of parameters

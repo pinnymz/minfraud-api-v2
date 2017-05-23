@@ -21,11 +21,11 @@ module Minfraud
 
       # @attribute was_authorized
       # @return [Boolean] The authorization outcome from the payment processor. If the transaction has not yet been approved or denied, do not include this field
-      accessor :was_authorized
+      attr_accessor :was_authorized
 
       # @attribute decline_code
       # @return [String] The decline code as provided by your payment processor. If the transaction was not declined, do not include this field
-      accessor :decline_code
+      attr_accessor :decline_code
 
       # Creates Minfraud::Components::Payment instance
       # @param  [Hash] params hash of parameters
