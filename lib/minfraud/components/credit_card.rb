@@ -2,7 +2,8 @@ module Minfraud
   module Components
     class CreditCard < Base
       # @attribute issuer_id_number
-      # # @return [String] The issuer ID number for the credit card. This is the first 6 digits of the credit card number.
+      # # @return [String] The issuer ID number for the credit card.
+      # This is the first 6 digits of the credit card number.
       # It identifies the issuing bank
       attr_accessor :issuer_id_number
 
@@ -22,8 +23,9 @@ module Minfraud
       # @return [String] The phone number, without the country code, for the issuing bank as provided by the end user
       attr_accessor :bank_phone_number
 
-      #@attribute token
-      #@return [String] A token uniquely identifying the card. The token should consist of non-space printable ASCII characters.
+      # @attribute token
+      # @return [String] A token uniquely identifying the card.
+      # The token should consist of non-space printable ASCII characters.
       attr_accessor :token
 
       # @attribute avs_result

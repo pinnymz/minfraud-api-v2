@@ -80,12 +80,13 @@ module Minfraud
     define :factors
 
     private
+
     # Creates a unified request body from components converted to JSON
     # @return [Hash] Request body
     def request_body
       MAPPING.keys.inject({}) do |mem, e|
         next mem unless value = send(e)
-        mem.merge!(e.to_s => value.to_json)
+        mem.merge!(e.to_s => value.as_json)
       end
     end
 

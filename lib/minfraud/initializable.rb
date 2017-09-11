@@ -6,7 +6,7 @@ module Minfraud
 
     def initialize(params = {})
       self.class.accessors.each do |name|
-        self.send :"#{name}=", params[name]
+        send :"#{name}=", params[name]
       end
     end
 
@@ -16,7 +16,7 @@ module Minfraud
       end
 
       def attr_accessor(*args)
-        accessors.push *args
+        accessors.push(*args)
 
         super
       end

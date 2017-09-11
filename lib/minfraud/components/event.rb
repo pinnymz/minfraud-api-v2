@@ -19,8 +19,13 @@ module Minfraud
 
       # @attribute type
       # @return [String] The type of event being scored
-      enum_accessor :type, [
-        :account_creation, :account_login, :purchase, :recurring_purchase, :referral, :survey
+      enum_accessor :type, %i[
+        account_creation
+        account_login
+        purchase
+        recurring_purchase
+        referral
+        survery
       ]
 
       # Creates Minfraud::Components::Event instance

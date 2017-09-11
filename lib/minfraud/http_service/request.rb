@@ -27,6 +27,7 @@ module Minfraud
       end
 
       private
+
       # Creates memoized Faraday::Connection instance
       # @return [Faraday::Connection] Faraday::Connection instance
       def adapter
